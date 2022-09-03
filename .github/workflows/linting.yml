@@ -3,6 +3,10 @@ on:
   push:
   pull_request:
 
+
+defaults:
+  run:
+    working-directory: terraform/dns/
 jobs:
   terraform_lint:
     runs-on: ubuntu-latest
