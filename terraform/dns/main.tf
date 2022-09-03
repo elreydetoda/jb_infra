@@ -1,10 +1,11 @@
 data "cloudflare_zone" "main_com_domain" {
-  name = "jupiterbroadcasting.com"
+  # name = "jupiterbroadcasting.com"
+  name = "elreydetoda.site"
 }
 
-data "cloudflare_zone" "ssh_show_domain" {
-  name = "selfhosted.show"
-}
+# data "cloudflare_zone" "ssh_show_domain" {
+#   name = "selfhosted.show"
+# }
 
 resource "cloudflare_record" "jb_com" {
   for_each = var.jb_com_subdomains
@@ -16,15 +17,15 @@ resource "cloudflare_record" "jb_com" {
   proxied = each.value["proxied"]
 }
 
-resource "cloudflare_record" "ssh_show" {
-  for_each = var.ssh_show_subdomains
+# resource "cloudflare_record" "ssh_show" {
+#   for_each = var.ssh_show_subdomains
 
-  zone_id = data.cloudflare_zone.ssh_show_domain.id
-  name    = each.value["name"]
-  value   = each.value["value"]
-  type    = each.value["type"]
-  proxied = each.value["proxied"]
-}
+#   zone_id = data.cloudflare_zone.ssh_show_domain.id
+#   name    = each.value["name"]
+#   value   = each.value["value"]
+#   type    = each.value["type"]
+#   proxied = each.value["proxied"]
+# }
 
 resource "cloudflare_page_rule" "jbcom_pagerules" {
   for_each = var.jb_com_pagerules
