@@ -141,13 +141,13 @@ ssh_show_subdomains = {}
 
 jb_com_pagerules = {
   "new-jb-com" = {
-    target        = "new.jupiterbroadcasting.com"
+    target        = "new.elreydetoda.site"
     forwarded_url = "https://www.jupiterbroadcasting.com"
     status_code   = "301"
     priority = 2
   }
   "www-jb-com" = {
-    target        = "jupiterbroadcasting.com"
+    target        = "elreydetoda.site"
     forwarded_url = "https://www.jupiterbroadcasting.com"
     status_code   = "301"
     priority = 1
