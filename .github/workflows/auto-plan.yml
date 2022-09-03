@@ -6,6 +6,8 @@ name: Terraform Plan
 
 on:
 
+  push:
+  pull_request:
   workflow_run:
     workflows: ["Linting"]
     types:
